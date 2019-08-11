@@ -1,0 +1,1 @@
+config.output.path = "C:\\Users\\Admin\\IdeaProjects\\webwallet\\src\\main\\html\\js"
