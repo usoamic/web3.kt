@@ -1,14 +1,14 @@
-package io.usoamic.web3kt.model
+package io.usoamic.web3kt.tx.model
 
 import io.usoamic.web3kt.bignumber.BigNumber
 
 class Transaction private constructor(
     val from: String?,
-    val nonce: BigNumber? /* BigInteger */,
-    val gasPrice: BigNumber? /* BigInteger */,
-    val gasLimit: BigNumber? /* BigInteger */,
+    val nonce: BigNumber?,
+    val gasPrice: BigNumber?,
+    val gasLimit: BigNumber?,
     val to: String?,
-    val value: BigNumber? /* BigInteger */,
+    val value: BigNumber?,
     val data: String?
 ) {
     companion object {
