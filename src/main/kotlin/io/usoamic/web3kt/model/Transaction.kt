@@ -10,6 +10,10 @@ class Transaction private constructor(
     data: String?
 ) {
     companion object {
-        fun createEthCallTransaction(from: String, to: String, data: String) = Transaction(from, null, null, null, to, null, data)
+        fun createEthCallTransaction(from: String, to: String, data: String) =
+            Transaction(from, null, null, null, to, null, data)
+
+        fun createTransaction(from: String?, nonce: Int?, gasPrice: Int?, gasLimit: Int?, to: String?, value: Int?, data: String?) =
+            Transaction(from, nonce, gasPrice, gasLimit, to, value, data)
     }
 }
