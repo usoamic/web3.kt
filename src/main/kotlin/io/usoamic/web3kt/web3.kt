@@ -10,11 +10,26 @@ external class Web3(provider: String) {
     }
 }
 
+
+external class Buffer {
+    companion object {
+        fun from(arg: String, encoding: String): Buffer
+    }
+    val length: Int
+}
+
+@JsModule("ethereumjs-tx")
+external class Tx(tx: Any) {
+    fun sign(privateKey: dynamic)
+    fun serialize(): String
+}
+
 external class Eth {
     fun getBalance(address: String, defaultBlock: String, callback: (error: String?, balance: String?) -> Unit)
     fun getTransactionCount(address: String, defaultBlock: String, callback: (error: String?, balance: String?) -> Unit)
     fun getBlockNumber(callback: (error: String?, number: String?) -> Unit)
     fun estimateGas(`object`: Any, callback: (error: String?, gas: String?) -> Unit): String
+    fun sendSignedTransaction(sendSignedTransaction: String)
 }
 
 external class Utils {
