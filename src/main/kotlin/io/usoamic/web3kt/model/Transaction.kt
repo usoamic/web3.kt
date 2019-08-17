@@ -1,13 +1,13 @@
 package io.usoamic.web3kt.model
 
 class Transaction private constructor(
-    from: String?,
-    nonce: Int? /* BigInteger */,
-    gasPrice: Int? /* BigInteger */,
-    gasLimit: Int? /* BigInteger */,
-    to: String?,
-    value: Int? /* BigInteger */,
-    data: String?
+    val from: String?,
+    val nonce: Int? /* BigInteger */,
+    val gasPrice: Int? /* BigInteger */,
+    val gasLimit: Int? /* BigInteger */,
+    val to: String?,
+    val value: Int? /* BigInteger */,
+    val data: String?
 ) {
     companion object {
         fun createEthCallTransaction(from: String, to: String, data: String) =
