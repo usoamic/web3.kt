@@ -1,6 +1,6 @@
 package io.usoamic.web3kt.model
 
-import io.usoamic.web3kt.BigNumber
+import io.usoamic.web3kt.bignumber.BigNumber
 
 class Transaction private constructor(
     val from: String?,

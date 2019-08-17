@@ -1,6 +1,6 @@
 package io.usoamic.web3kt.web3
 
-import io.usoamic.web3kt.BigNumber
+import io.usoamic.web3kt.bignumber.BigNumber
 
 external class Utils {
     fun checkAddressChecksum(address: String): Boolean
