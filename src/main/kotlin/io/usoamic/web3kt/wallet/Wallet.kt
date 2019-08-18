@@ -1,18 +1,20 @@
 package io.usoamic.web3kt.wallet
 
-import io.usoamic.web3kt.Buffer
+import io.usoamic.web3kt.buffer.Buffer
 
 @JsModule("ethereumjs-wallet")
-open external class Wallet {
+external class Wallet {
     fun getPublicKey(): Buffer
     fun getPrivateKey(): Buffer
-    @JsName("getPrivateKeyString")
-    fun getPrivateKeyAsString(): String
+    @JsName("getAddressString")
+    fun getAddressAsString(): String
     @JsName("getPublicKeyString")
     fun getPublicKeyAsString(): String
-    fun getChecksumAddressString(): String
+    @JsName("getPrivateKeyString")
+    fun getPrivateKeyAsString(): String
+    @JsName("getChecksumAddressString")
+    fun getChecksumAddressAsString(): String
     fun toV3(password: String): String
-
 
     companion object {
         fun generate(): Wallet

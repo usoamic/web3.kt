@@ -1,6 +1,6 @@
 package io.usoamic.web3kt.wallet
 
-import io.usoamic.web3kt.Buffer
+import io.usoamic.web3kt.buffer.Buffer
 
 class WalletUtils {
     companion object {
