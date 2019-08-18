@@ -1,4 +1,4 @@
-package io.usoamic.web3kt
+package io.usoamic.web3kt.buffer
 
 external class Buffer() {
     constructor(buffer: Buffer)
