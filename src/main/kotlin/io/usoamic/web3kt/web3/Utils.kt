@@ -2,7 +2,7 @@ package io.usoamic.web3kt.web3
 
 import io.usoamic.web3kt.bignumber.BigNumber
 
-external class Utils {
+external interface Utils {
     fun checkAddressChecksum(address: String): Boolean
     fun toChecksumAddress(address: String): String
     fun isAddress(address: String): Boolean

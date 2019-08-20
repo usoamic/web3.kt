@@ -1,6 +1,6 @@
 package io.usoamic.web3kt.web3
 
-external class Eth {
+external interface Eth {
     fun getBalance(address: String, defaultBlock: String, callback: (error: String?, balance: String?) -> Unit)
     fun getTransactionCount(address: String, defaultBlock: String, callback: (error: String?, balance: String?) -> Unit)
     fun getBlockNumber(callback: (error: String?, number: String?) -> Unit)
