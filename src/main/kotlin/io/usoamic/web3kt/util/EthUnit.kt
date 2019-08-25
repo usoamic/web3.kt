@@ -1,6 +1,6 @@
 package io.usoamic.web3kt.util
 
-class Unit {
+class EthUnit {
     companion object {
         val WEI = "wei"
         val KWEI = "kwei"
