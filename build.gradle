@@ -21,7 +21,6 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
-    maven { url "https://kotlin.bintray.com/js-externals" }
 }
 
 dependencies {
@@ -34,36 +33,31 @@ kotlinFrontend {
 
     npm {
         dependency "web3", "^1.2.1"
-        dependency "toastr", "^2.1.4"
-        dependency "jquery", "^3.2.0-0"
         dependency "bignumber.js", "^9.0.0"
-        dependency "ethereumjs-tx", "^2.1.0"
+        dependency "ethereumjs-tx", "^1.3.7"
         dependency "buffer", "^5.2.1"
         dependency "ethereumjs-wallet", "0.6.3"
+        dependency "bip39", "3.0.2"
     }
-
-    webpackBundle {
-        bundleName = "main"
-        publicPath = file('src/main/html')
-        mode = 'production' //'development'
-    }
-
-    define "PRODUCTION", false
-    define "X", false
+    define "PRODUCTION", true
 }
 
 compileKotlin2Js {
-    kotlinOptions.metaInfo = true
-    kotlinOptions.outputFile = "$project.buildDir.path/js/${project.name}.js"
-    kotlinOptions.sourceMap = false
-    kotlinOptions.moduleKind = 'commonjs'
-    kotlinOptions.main = "call"
+    kotlinOptions {
+        metaInfo = true
+        sourceMap = false
+        moduleKind = 'commonjs'
+        main = "call"
+        suppressWarnings = false
+    }
 }
 
 compileTestKotlin2Js {
-    kotlinOptions.metaInfo = true
-    kotlinOptions.outputFile = "$project.buildDir.path/js-tests/${project.name}-tests.js"
-    kotlinOptions.sourceMap = true
-    kotlinOptions.moduleKind = 'commonjs'
-    kotlinOptions.main = "call"
+    kotlinOptions {
+        metaInfo = true
+        outputFile = "$project.buildDir.path/js-tests/${project.name}-tests.js"
+        sourceMap = true
+        moduleKind = 'commonjs'
+        main = "call"
+    }
 }
