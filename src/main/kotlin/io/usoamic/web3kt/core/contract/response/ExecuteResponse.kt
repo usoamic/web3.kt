@@ -1,8 +1,8 @@
-package io.usoamic.web3kt.web3.contract.response
+package io.usoamic.web3kt.core.contract.response
 
 import io.usoamic.web3kt.bignumber.BigNumber
-import io.usoamic.web3kt.web3.contract.model.EstimateGasOption
-import io.usoamic.web3kt.web3.contract.model.ExecuteOption
+import io.usoamic.web3kt.core.contract.model.EstimateGasOption
+import io.usoamic.web3kt.core.contract.model.ExecuteOption
 import kotlin.js.Promise
 
 interface ExecuteResponse {

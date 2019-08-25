@@ -1,8 +1,8 @@
-package io.usoamic.web3kt.web3.extension
+package io.usoamic.web3kt.core.extension
 
-import io.usoamic.web3kt.web3.contract.Contract
-import io.usoamic.web3kt.web3.Web3
-import io.usoamic.web3kt.web3.contract.other.ContractWrapper
+import io.usoamic.web3kt.core.contract.Contract
+import io.usoamic.web3kt.core.Web3
+import io.usoamic.web3kt.core.contract.other.ContractWrapper
 import kotlin.js.Json
 
 inline fun func1() { }

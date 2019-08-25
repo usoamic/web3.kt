@@ -1,4 +1,4 @@
-package io.usoamic.web3kt.web3.contract
+package io.usoamic.web3kt.core.contract
 
 external interface ContractOptions {
     val address: String

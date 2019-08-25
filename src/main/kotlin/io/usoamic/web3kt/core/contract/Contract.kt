@@ -1,6 +1,6 @@
-package io.usoamic.web3kt.web3.contract
+package io.usoamic.web3kt.core.contract
 
-import io.usoamic.web3kt.web3.contract.other.ContractWrapper
+import io.usoamic.web3kt.core.contract.other.ContractWrapper
 
 external interface Contract<T : ContractWrapper> {
     val options: ContractOptions

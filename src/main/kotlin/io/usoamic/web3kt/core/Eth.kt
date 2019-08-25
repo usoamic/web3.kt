@@ -1,7 +1,6 @@
-package io.usoamic.web3kt.web3
+package io.usoamic.web3kt.core
 
 import io.usoamic.web3kt.bignumber.BigNumber
-import io.usoamic.web3kt.buffer.Buffer
 import io.usoamic.web3kt.tx.model.TransactionReceipt
 import kotlin.js.Promise
 

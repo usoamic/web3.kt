@@ -1,4 +1,4 @@
-package io.usoamic.web3kt.web3
+package io.usoamic.web3kt.core
 
 @JsModule("web3")
 external class Web3(provider: String) {
