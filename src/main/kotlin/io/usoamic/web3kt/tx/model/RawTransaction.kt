@@ -3,7 +3,7 @@ package io.usoamic.web3kt.tx.model
 import io.usoamic.web3kt.bignumber.BigNumber
 import io.usoamic.web3kt.bignumber.extension.toBuffer
 import io.usoamic.web3kt.buffer.Buffer
-import io.usoamic.web3kt.util.DefaultGasProvider.Companion.GAS_PRICE
+import io.usoamic.web3kt.tx.gas.DefaultGasProvider.Companion.GAS_PRICE
 
 class RawTransaction private constructor(
     val from: String,
