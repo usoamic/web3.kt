@@ -1,4 +1,4 @@
-package io.usoamic.web3kt.util
+package io.usoamic.web3kt.tx.block
 
 class DefaultBlockParameterName {
     companion object {
