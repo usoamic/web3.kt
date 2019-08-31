@@ -21,7 +21,7 @@ class Coin private constructor(value: BigNumber, decimals: Int = DECIMALS) {
         fun ONE(decimals: Int = DECIMALS): Coin = Coin(BigNumberValue.ONE, decimals)
         fun TEN(decimals: Int = DECIMALS): Coin = Coin(BigNumberValue.TEN, decimals)
         fun ONE_HUNDRED(decimals: Int = DECIMALS): Coin = Coin(BigNumberValue.ONE_HUNDRED, decimals)
-        fun fromSat(value: BigNumber, decimals: Int = DECIMALS): Coin = Coin(value, decimals)
+        fun fromSat(value: BigNumber, decimals: Int = DECIMALS): Coin = Coin(BigNumber(value).dividedBy(SAT_PER_COIN), decimals)
         fun fromCoin(value: String, decimals: Int = DECIMALS): Coin = Coin(BigNumber(value), decimals)
         fun fromCoin(value: Int, decimals: Int = DECIMALS): Coin = Coin(BigNumber(value), decimals)
 
