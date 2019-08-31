@@ -14,7 +14,7 @@ class Coin private constructor(value: BigNumber, decimals: Int = DECIMALS) {
                 DECIMAL_PLACES = DECIMALS
             )
         )
-        this.value = BigNumber(value.toFormat(decimals))
+        this.value = BigNumber(value).toFormat(decimals)
     }
 
     companion object {
