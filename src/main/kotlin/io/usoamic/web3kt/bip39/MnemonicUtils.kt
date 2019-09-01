@@ -6,7 +6,7 @@ import io.usoamic.web3kt.buffer.Buffer
 external class MnemonicUtils {
     companion object {
         fun generateMnemonic(): String
-        fun isValidMnemonicPhrase(phrase: String)
+        fun isValidMnemonicPhrase(phrase: String): Boolean
         @JsName("mnemonicToSeedSync")
         fun mnemonicToSeed(phrase: String): Buffer
         @JsName("mnemonicToSeedSync")
