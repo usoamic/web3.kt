@@ -8,3 +8,7 @@ inline fun func1() { }
 inline fun Wallet.Companion.fromPrivateKey(privateKey: String): Wallet {
     return Wallet.fromPrivateKey(Buffer.from(privateKey, "hex"))
 }
+
+inline fun Wallet.toJson(): String {
+    return JSON.stringify(this)
+}
