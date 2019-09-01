@@ -7,4 +7,3 @@ fun String.removeHexPrefix(): String {
 fun String.addHexPrefix(): String {
     return "0x$this"
 }
-
