@@ -1,6 +1,7 @@
 package io.usoamic.web3kt.wallet
 
 import io.usoamic.web3kt.buffer.Buffer
+import kotlin.js.Json
 
 @JsModule("ethereumjs-wallet")
 external class Wallet {
@@ -14,7 +15,7 @@ external class Wallet {
     fun getPrivateKeyAsString(): String
     @JsName("getChecksumAddressString")
     fun getChecksumAddressAsString(): String
-    fun toV3(password: String): String
+    fun toV3(password: String): Json
 
     companion object {
         fun generate(): Wallet
