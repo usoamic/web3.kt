@@ -14,7 +14,7 @@ class Coin private constructor(value: BigNumber, decimals: Int = DECIMALS) {
                 DECIMAL_PLACES = DECIMALS
             )
         )
-        this.value = BigNumber(value).toFormat(decimals)
+        this.value = BigNumber(BigNumber(value).toFixed(decimals))
     }
 
     companion object {
@@ -35,6 +35,10 @@ class Coin private constructor(value: BigNumber, decimals: Int = DECIMALS) {
 
     fun toStringSat(): String {
         return value.multipliedBy(SAT_PER_COIN).toString()
+    }
+
+    fun toPlainString(): String {
+        return value.toPrecision(DECIMALS).toString()
     }
 
     fun toBigNumber(): BigNumber {
