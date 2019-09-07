@@ -23,6 +23,8 @@ external class BigNumber(value: String) {
     fun multipliedBy(value: BigNumber): BigNumber
     fun toNumber(): BigNumber
     fun toFormat(dp: Int): BigNumber
+    @JsName("precision")
+    fun toPrecision(dp: Int): BigNumber
     fun pow(n: Int): BigNumber
 
     companion object {
