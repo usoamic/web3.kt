@@ -14,7 +14,7 @@ fun String.hasPrefix(): Boolean {
     return (substring(0, min(this.length, 2)) == "0x")
 }
 
-fun String.addPrefixIfNotExist(): String {
+fun String.addHexPrefixIfNotExist(): String {
     return if(this.hasPrefix()) this else this.addHexPrefix()
 }
 
