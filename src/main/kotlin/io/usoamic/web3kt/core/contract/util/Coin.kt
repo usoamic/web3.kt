@@ -14,7 +14,7 @@ class Coin private constructor(value: BigNumber, decimals: Int = DECIMALS) {
                 DECIMAL_PLACES = DECIMALS
             )
         )
-        this.value = BigNumber(BigNumber(value).toFixed(decimals))
+        this.value = BigNumber(value.toFixed(decimals))
     }
 
     companion object {
@@ -22,11 +22,17 @@ class Coin private constructor(value: BigNumber, decimals: Int = DECIMALS) {
         fun TEN(decimals: Int = DECIMALS): Coin = Coin(BigNumberValue.TEN, decimals)
         fun ONE_HUNDRED(decimals: Int = DECIMALS): Coin = Coin(BigNumberValue.ONE_HUNDRED, decimals)
         fun fromSat(value: BigNumber, decimals: Int = DECIMALS): Coin = Coin(BigNumber(value).dividedBy(SAT_PER_COIN), decimals)
+        fun fromSat(value: String, decimals: Int = DECIMALS): Coin = Coin(BigNumber(value).dividedBy(SAT_PER_COIN), decimals)
+        fun fromCoin(value: Long, decimals: Int = DECIMALS): Coin = Coin(BigNumber(value), decimals)
+        fun fromCoin(value: BigNumber, decimals: Int = DECIMALS): Coin = Coin(BigNumber(value), decimals)
         fun fromCoin(value: String, decimals: Int = DECIMALS): Coin = Coin(BigNumber(value), decimals)
-        fun fromCoin(value: Int, decimals: Int = DECIMALS): Coin = Coin(BigNumber(value), decimals)
 
         const val DECIMALS: Int = 8
         val SAT_PER_COIN: BigNumber = BigNumberValue.TEN.pow(DECIMALS)
+    }
+
+    fun toMillion(): String {
+        return "${toBigNumber().dividedBy(BigNumber(1000000)).toFixed(2)}M"
     }
 
     fun toSat(): BigNumber {
@@ -38,10 +44,10 @@ class Coin private constructor(value: BigNumber, decimals: Int = DECIMALS) {
     }
 
     fun toPlainString(): String {
-        return value.toPrecision(DECIMALS).toString()
+        return toBigNumber().toString()
     }
 
     fun toBigNumber(): BigNumber {
-        return value
+        return BigNumber(value.toPrecision(DECIMALS))
     }
 }
