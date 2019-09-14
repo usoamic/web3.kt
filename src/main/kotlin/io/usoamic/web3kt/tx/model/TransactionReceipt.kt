@@ -11,4 +11,5 @@ interface TransactionReceipt {
     val contractAddress: String
     val cumulativeGasUsed: BigNumber
     val gasUsed: BigNumber
+    val logs: List<Any>
 }
