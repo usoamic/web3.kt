@@ -1,7 +1,6 @@
 package io.usoamic.web3kt.model
 
 import io.usoamic.web3kt.bignumber.BigNumber
-import io.usoamic.web3kt.tx.model.Transaction
 
 @Suppress("ArrayInDataClass")
 data class Block (
