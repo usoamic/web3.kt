@@ -13,4 +13,5 @@ external interface Eth {
     fun sendSignedTransaction(signedTransaction: String) : Promise<TransactionReceipt>
     fun getGasPrice(): Promise<BigNumber>
     fun getTransaction(transactionHash: String): Promise<TransactionData>
+    fun getTransactionReceipt(transactionHash: String): Promise<TransactionReceipt>
 }
