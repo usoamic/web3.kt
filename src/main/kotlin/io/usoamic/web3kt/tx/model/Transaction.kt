@@ -2,7 +2,7 @@ package io.usoamic.web3kt.tx.model
 
 import io.usoamic.web3kt.bignumber.BigNumber
 
-data class TransactionData(
+data class Transaction(
     val hash: String,
     val nonce: BigNumber,
     val blockHash: String,
