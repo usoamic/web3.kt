@@ -17,7 +17,7 @@ apply plugin: 'kotlin-dce-js'
 apply plugin: 'org.jetbrains.kotlin.frontend'
 
 group 'io.usoamic'
-version '1.0.3'
+version '1.0.4'
 
 repositories {
     mavenCentral()
