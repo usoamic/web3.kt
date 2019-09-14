@@ -38,6 +38,7 @@ kotlinFrontend {
         dependency "buffer", "^5.2.1"
         dependency "ethereumjs-wallet", "0.6.3"
         dependency "bip39", "3.0.2"
+       dependency "abi-decoder", "^2.2.0"
     }
     define "PRODUCTION", true
 }
