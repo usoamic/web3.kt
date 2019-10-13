@@ -43,8 +43,8 @@ configure<KotlinFrontendExtension> {
         dependency("bignumber.js", "^9.0.0")
         dependency("ethereumjs-tx", "^1.3.7")
         dependency("buffer", "^5.2.1")
-        dependency("ethereumjs-wallet", "0.6.3")
-        dependency("bip39", "3.0.2")
+        dependency("ethereumjs-wallet", "^0.6.3")
+        dependency("bip39", "^3.0.2")
         dependency("abi-decoder", "^2.2.0")
     }
 }
