@@ -39,7 +39,7 @@ configure<KotlinFrontendExtension> {
     downloadNodeJsVersion = "latest"
 
     npm {
-        dependency("web3", "^1.2.1")
+        dependency("web3", "^1.2.2")
         dependency("bignumber.js", "^9.0.0")
         dependency("ethereumjs-tx", "^1.3.7")
         dependency("buffer", "^5.2.1")
