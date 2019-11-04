@@ -17,7 +17,7 @@ buildscript {
 
 allprojects {
     group = "io.usoamic"
-    version = "1.0.7"
+    version = "1.1.0"
 }
 
 plugins {
