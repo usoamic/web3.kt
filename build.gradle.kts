@@ -17,7 +17,7 @@ buildscript {
 
 allprojects {
     group = "io.usoamic"
-    version = "1.0.6"
+    version = "1.1.0"
 }
 
 plugins {
@@ -39,10 +39,10 @@ configure<KotlinFrontendExtension> {
     downloadNodeJsVersion = "latest"
 
     npm {
-        dependency("web3", "^1.2.1")
+        dependency("web3", "^1.2.2")
         dependency("bignumber.js", "^9.0.0")
         dependency("ethereumjs-tx", "^1.3.7")
-        dependency("buffer", "^5.2.1")
+        dependency("babel-polyfill", "^6.26.0")
         dependency("ethereumjs-wallet", "^0.6.3")
         dependency("bip39", "^3.0.2")
         dependency("abi-decoder", "^2.2.0")

@@ -11,3 +11,11 @@ fun String.toBigNumber(): BigNumber {
 fun BigNumber.toBuffer(): Buffer {
     return Web3.utils.toHex(this)
 }
+
+fun String.toBuffer(): Buffer {
+    return Web3.utils.toHex(this)
+}
+
+fun Long.toBuffer(): Buffer {
+    return Web3.utils.toHex(this.toString())
+}
