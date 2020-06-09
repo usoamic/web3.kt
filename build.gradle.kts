@@ -1,13 +1,12 @@
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackOutput.Target.COMMONJS
 
 object Version {
-    val web3 = "^1.2.2"
-    val bigNumberJs = "^9.0.0"
-    val ethereumJsTx = "^1.3.7"
-    val babelPolyfill = "^6.26.0"
-    val ethereumJsWallet = "^0.6.3"
-    val bip39 = "^3.0.2"
-    val abiDecoder = "^2.2.0"
+    const val web3 = "^1.2.9"
+    const val bigNumberJs = "^9.0.0"
+    const val ethereumJsTx = "^1.3.7"
+    const val ethereumJsWallet = "^0.6.3"
+    const val bip39 = "^3.0.2"
+    const val abiDecoder = "^2.3.0"
 }
 
 buildscript {
@@ -45,7 +44,6 @@ dependencies {
     implementation(npm("web3", Version.web3))
     implementation(npm("bignumber.js", Version.bigNumberJs))
     implementation(npm("ethereumjs-tx", Version.ethereumJsTx))
-    implementation(npm("babel-polyfill", Version.babelPolyfill))
     implementation(npm("ethereumjs-wallet", Version.ethereumJsWallet))
     implementation(npm("bip39", Version.bip39))
     implementation(npm("abi-decoder", Version.abiDecoder))
