@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackOutput.Target.COMMONJS
-
 object Version {
     const val web3 = "^1.2.9"
     const val bigNumberJs = "^9.0.0"
