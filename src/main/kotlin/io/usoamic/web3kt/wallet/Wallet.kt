@@ -4,6 +4,7 @@ import io.usoamic.web3kt.buffer.Buffer
 import kotlin.js.Json
 
 @JsModule("ethereumjs-wallet")
+@JsNonModule
 external class Wallet {
     fun getPublicKey(): Buffer
     fun getPrivateKey(): Buffer

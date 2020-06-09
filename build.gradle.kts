@@ -1,29 +1,37 @@
-import org.jetbrains.kotlin.gradle.frontend.KotlinFrontendExtension
+import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackOutput.Target.COMMONJS
+
+object Version {
+    val web3 = "^1.2.2"
+    val bigNumberJs = "^9.0.0"
+    val ethereumJsTx = "^1.3.7"
+    val babelPolyfill = "^6.26.0"
+    val ethereumJsWallet = "^0.6.3"
+    val bip39 = "^3.0.2"
+    val abiDecoder = "^2.2.0"
+}
 
 buildscript {
-    val kotlinVersion = "1.3.50"
+    val kotlinVersion = "1.3.72"
 
     repositories {
         jcenter()
         mavenCentral()
-        maven ("https://dl.bintray.com/kotlin/kotlin-eap")
+        maven("https://dl.bintray.com/kotlin/kotlin-eap")
     }
 
     dependencies {
         classpath("org.jetbrains.kotlin", "kotlin-gradle-plugin", kotlinVersion)
-        classpath("org.jetbrains.kotlin", "kotlin-frontend-plugin", "0.0.45")
     }
 }
 
 allprojects {
     group = "io.usoamic"
-    version = "1.1.0"
+    version = "1.1.1"
 }
 
 plugins {
-    id("kotlin2js") version "1.3.50"
-    id("kotlin-dce-js") version "1.3.50"
-    id("org.jetbrains.kotlin.frontend") version "1.3.50"
+    val kotlinVersion = "1.3.72"
+    id("org.jetbrains.kotlin.js") version kotlinVersion
 }
 
 repositories {
@@ -32,31 +40,24 @@ repositories {
 }
 
 dependencies {
-    compile(kotlin("stdlib-js"))
+    implementation(kotlin("stdlib-js"))
+
+    implementation(npm("web3", Version.web3))
+    implementation(npm("bignumber.js", Version.bigNumberJs))
+    implementation(npm("ethereumjs-tx", Version.ethereumJsTx))
+    implementation(npm("babel-polyfill", Version.babelPolyfill))
+    implementation(npm("ethereumjs-wallet", Version.ethereumJsWallet))
+    implementation(npm("bip39", Version.bip39))
+    implementation(npm("abi-decoder", Version.abiDecoder))
 }
 
-configure<KotlinFrontendExtension> {
-    downloadNodeJsVersion = "latest"
-
-    npm {
-        dependency("web3", "^1.2.2")
-        dependency("bignumber.js", "^9.0.0")
-        dependency("ethereumjs-tx", "^1.3.7")
-        dependency("babel-polyfill", "^6.26.0")
-        dependency("ethereumjs-wallet", "^0.6.3")
-        dependency("bip39", "^3.0.2")
-        dependency("abi-decoder", "^2.2.0")
-    }
-}
-
-tasks {
-    compileKotlin2Js {
-        kotlinOptions {
-            metaInfo = true
-            sourceMap = false
-            moduleKind = "commonjs"
-            main = "call"
-            suppressWarnings = false
+kotlin {
+    target {
+        browser {
+            webpackTask {
+                output.libraryTarget = COMMONJS
+                //output.libraryTarget = "commonjs" // alternative
+            }
         }
     }
 }

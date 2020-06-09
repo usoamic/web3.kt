@@ -1,5 +1,5 @@
 rootProject.name = "web3kt"
-
+/*
 pluginManagement {
     resolutionStrategy {
         eachPlugin {
@@ -9,3 +9,4 @@ pluginManagement {
         }
     }
 }
+ */
