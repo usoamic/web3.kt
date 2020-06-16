@@ -4,7 +4,7 @@ import io.usoamic.web3kt.bignumber.BigNumber
 import io.usoamic.web3kt.bignumber.BigNumberValue
 import io.usoamic.web3kt.bignumber.extension.toBuffer
 import io.usoamic.web3kt.buffer.extension.toHex
-import io.usoamic.web3kt.tx.gas.DefaultGasProvider.Companion.DEFAULT_GAS_PRICE
+import io.usoamic.web3kt.tx.gas.DefaultGasProvider.Companion.GAS_PRICE
 
 class RawTransaction private constructor(
     val from: String,
@@ -20,13 +20,13 @@ class RawTransaction private constructor(
             createTransaction(from, null, null, null, to, BigNumberValue.ZERO, data)
 
         fun createEtherTransaction(from: String, nonce: BigNumber, gasLimit: BigNumber, to: String, value: BigNumber) =
-            createTransaction(from, nonce, DEFAULT_GAS_PRICE, gasLimit, to, value, "0x")
+            createTransaction(from, nonce, GAS_PRICE, gasLimit, to, value, "0x")
 
         fun createEtherTransaction(from: String, nonce: BigNumber, gasPrice: BigNumber, gasLimit: BigNumber, to: String, value: BigNumber) =
             createTransaction(from, nonce, gasPrice, gasLimit, to, value, "0x")
 
         fun createContractTransaction(from: String, nonce: BigNumber, gasLimit: BigNumber, to: String, data: String) =
-            createTransaction(from, nonce, DEFAULT_GAS_PRICE, gasLimit, to, BigNumberValue.ZERO, data)
+            createTransaction(from, nonce, GAS_PRICE, gasLimit, to, BigNumberValue.ZERO, data)
 
         fun createContractTransaction(from: String, nonce: BigNumber, gasPrice: BigNumber, gasLimit: BigNumber, to: String, data: String) =
             createTransaction(from, nonce, gasPrice, gasLimit, to, BigNumberValue.ZERO, data)
