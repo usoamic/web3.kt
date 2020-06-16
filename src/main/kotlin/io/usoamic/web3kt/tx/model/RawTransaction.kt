@@ -22,8 +22,14 @@ class RawTransaction private constructor(
         fun createEtherTransaction(from: String, nonce: BigNumber, gasLimit: BigNumber, to: String, value: BigNumber) =
             createTransaction(from, nonce, GAS_PRICE, gasLimit, to, value, "0x")
 
+        fun createEtherTransaction(from: String, nonce: BigNumber, gasPrice: BigNumber, gasLimit: BigNumber, to: String, value: BigNumber) =
+            createTransaction(from, nonce, gasPrice, gasLimit, to, value, "0x")
+
         fun createContractTransaction(from: String, nonce: BigNumber, gasLimit: BigNumber, to: String, data: String) =
             createTransaction(from, nonce, GAS_PRICE, gasLimit, to, BigNumberValue.ZERO, data)
+
+        fun createContractTransaction(from: String, nonce: BigNumber, gasPrice: BigNumber, gasLimit: BigNumber, to: String, data: String) =
+            createTransaction(from, nonce, gasPrice, gasLimit, to, BigNumberValue.ZERO, data)
 
         fun createTransaction(from: String, nonce: BigNumber?, gasPrice: BigNumber?, gasLimit: BigNumber?, to: String, value: BigNumber, data: String) =
             RawTransaction(from, nonce?.toBuffer()?.toHex(), gasPrice?.toBuffer()?.toHex(), gasLimit?.toBuffer()?.toHex(), to, value.toNumber(), data)
