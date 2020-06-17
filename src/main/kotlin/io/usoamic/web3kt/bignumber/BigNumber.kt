@@ -1,8 +1,7 @@
 package io.usoamic.web3kt.bignumber
 
-import io.usoamic.web3kt.buffer.Buffer
-
 @JsModule("bignumber.js")
+@JsNonModule
 external class BigNumber(value: String) {
     constructor(value: Int)
     constructor(value: Double)

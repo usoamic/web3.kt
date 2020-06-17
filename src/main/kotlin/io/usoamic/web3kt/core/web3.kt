@@ -1,6 +1,7 @@
 package io.usoamic.web3kt.core
 
 @JsModule("web3")
+@JsNonModule
 external class Web3(provider: String) {
     val utils: Utils = definedExternally
     val eth: Eth = definedExternally
