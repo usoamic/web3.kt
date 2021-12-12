@@ -5,8 +5,6 @@ import io.usoamic.web3kt.core.Web3
 import io.usoamic.web3kt.core.contract.other.ContractWrapper
 import kotlin.js.Json
 
-inline fun func1() { }
-
 inline fun <T : ContractWrapper>Web3.newContract(jsonInterface: Json, address: String): Contract<T> {
     val web3 = this
     return js("new web3.eth.Contract(jsonInterface, address)").unsafeCast<Contract<T>>()
