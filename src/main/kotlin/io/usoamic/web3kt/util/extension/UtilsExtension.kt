@@ -1,5 +1,6 @@
 package io.usoamic.web3kt.util.extension
 
+import io.usoamic.web3kt.core.Web3
 import kotlin.math.min
 
 fun String.removeHexPrefix(): String {
@@ -20,4 +21,8 @@ fun String.addHexPrefixIfNotExist(): String {
 
 fun String.removeHexPrefixIfExist(): String {
     return if(this.hasPrefix()) this.removeHexPrefix() else this
+}
+
+fun String.toChecksumAddress(): String {
+    return Web3.utils.toChecksumAddress(this)
 }

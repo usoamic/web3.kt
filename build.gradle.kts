@@ -1,19 +1,24 @@
 object Version {
-    const val web3 = "^1.2.9"
-    const val bigNumberJs = "^9.0.0"
+    const val web3 = "^1.6.1"
+    const val bigNumberJs = "^9.0.1"
+    const val datatablesNetBs4 = "^1.11.3"
+    const val ethereumJsWallet = "^0.6.5"
     const val ethereumJsTx = "^1.3.7"
-    const val ethereumJsWallet = "^0.6.3"
+    const val babelPolyFill = "^6.26.0"
+    const val jQuery = "^3.6.0"
+    const val toastr = "^2.1.4"
+    const val qrCode = "^1.4.1"
+    const val bootstrap = "^4.6.1"
+    const val popperJs = "^1.16.0"
     const val bip39 = "^3.0.2"
     const val abiDecoder = "^2.3.0"
 }
 
 buildscript {
-    val kotlinVersion = "1.3.72"
+    val kotlinVersion = "1.4.32"
 
     repositories {
-        jcenter()
         mavenCentral()
-        maven("https://dl.bintray.com/kotlin/kotlin-eap")
     }
 
     dependencies {
@@ -21,19 +26,17 @@ buildscript {
     }
 }
 
-allprojects {
-    group = "io.usoamic"
-    version = "1.1.1"
+plugins {
+    kotlin("js") version "1.4.32"
 }
 
-plugins {
-    val kotlinVersion = "1.3.72"
-    id("org.jetbrains.kotlin.js") version kotlinVersion
+allprojects {
+    group = "io.usoamic"
+    version = "1.1.2"
 }
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 dependencies {
@@ -46,3 +49,5 @@ dependencies {
     implementation(npm("bip39", Version.bip39))
     implementation(npm("abi-decoder", Version.abiDecoder))
 }
+
+kotlin.js().browser {}
